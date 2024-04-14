@@ -21,7 +21,6 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "redux-persist": "^6.0.0",
-    "strapi-stripe": "^3.4.1",
     "stripe": "^11.15.0",
     "styled-components": "5.3.3"
   },
