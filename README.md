@@ -1,6 +1,6 @@
 # Browse-Bazaar 🚀
 
-Welcome to Browse-Bazaar, my first full-stack project and latest venture in the world of e-commerce! 🌟 A special shoutout to Chetan, whose collaboration was invaluable in making this dream a reality. Together, we navigated late-night coding sessions, countless bugs, and relentless dedication for 2 weeks to bring you something truly special. 🌟
+Welcome to Browse-Bazaar, my first full-stack project and latest venture in the world of e-commerce! 🌟 
 
 ## Demo
 
