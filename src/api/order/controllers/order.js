@@ -12,7 +12,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
     const { cart } = ctx.request.body;
-    // console.log(11)
+    console.log(11)
     if (!cart) {
       ctx.response.status = 400;
       return { error: "Cart not found in request body" };
@@ -28,7 +28,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
             populate: "*",
           }
         );
-        // console.log(item.image.url);
+        console.log(item.image.url);
         return {
           price_data: {
             currency: "usd",
@@ -42,8 +42,9 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         };
       })
     );
-
+    console.log(12)
     try {
+      console.log(13)
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         line_items: lineItems,
@@ -54,7 +55,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           allowed_countries: ["US"],
         },
       });
-      // console.log(14)
+      console.log(14)
 
       await strapi.service("api::order.order").create({
         data: {
@@ -62,7 +63,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           stripeId: session.id,
         },
       });
-      // console.log(15)
+      console.log(15)
 
       return { stripeSession: session };
     } catch (error) {

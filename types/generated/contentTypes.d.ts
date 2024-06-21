@@ -800,7 +800,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    image: Attribute.Media;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     products: Attribute.Relation<
       'api::category.category',
       'manyToMany',
@@ -875,7 +875,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     price: Attribute.Decimal & Attribute.Required;
-    image: Attribute.Media;
+    image: Attribute.Media<'images'>;
     description: Attribute.Text;
     categories: Attribute.Relation<
       'api::product.product',
